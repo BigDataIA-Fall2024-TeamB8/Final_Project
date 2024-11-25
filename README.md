@@ -1,7 +1,7 @@
 # Title: AI-Powered TED Talk Personalization and Research Assistant
 
-# Codelabs link: https://codelabs-preview.appspot.com/?file_id=1YhyZ6qHpSVr-cAeeDM5YerDxdNizBTQxUQJrorEgWD8#0
-# Video link: 
+## Codelabs link: https://codelabs-preview.appspot.com/?file_id=1YhyZ6qHpSVr-cAeeDM5YerDxdNizBTQxUQJrorEgWD8#0
+## Video link: 
 
 # Background
 TED Talks are a great way to learn since they provide insightful thoughts from speakers on a range of subjects. Without particular searches, users may have trouble finding the correct content, and there are no tools to compare ideas from different lectures or customize insights. Additionally, the platform is devoid of interactive features like conversational browsing and methods for converting insights into practical actions. Because of these restrictions, viewers find it challenging to properly interact with and implement the information presented in TED Talks, highlighting the need for a more customized and interactive platform.
