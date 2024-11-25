@@ -28,6 +28,12 @@
                   environment="web"
                   feedback-link="">
     
+      <google-codelab-step label="DAMG 7245: Final Project" duration="0">
+        <p><strong>Team 8</strong></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Title: AI-Powered TED Talk Personalization and Research Assistant" duration="0">
         <p><strong>Team Members: </strong></p>
 <ol type="1" start="1">
@@ -133,6 +139,22 @@
 <p class="image-container"><img style="width: 495.00px" src="img\\100e2e27844ab763.png"></p>
 <p><strong>UI Workflow:<br></strong></p>
 <p class="image-container"><img style="width: 624.00px" src="img\\d1e27a1c951f022a.png"></p>
+<p><strong>Synchronous Tasks</strong></p>
+<ul>
+<li>Set up repository and environment</li>
+<li>Scrape TED metadata and transcripts</li>
+<li>Clean and preprocess transcripts</li>
+<li>Generate embeddings using OpenAI</li>
+<li>Save metadata and processed data in S3/Snowflake</li>
+</ul>
+<p><strong>Asynchronous Tasks</strong></p>
+<ul>
+<li>Fetch additional details for each talk using APIs</li>
+<li>Populate vector database (Pinecone) with embeddings</li>
+<li>Perform RAG based queries and web search integration</li>
+<li>Generate mind maps</li>
+<li>Export notes and playbooks in user requested format</li>
+</ul>
 <p><strong>Proof of Concept:</strong></p>
 <p>Performed proof of concept of TED talks data extraction using selenium and beautiful soup. Stored the metadata as csv files for further study. This is presented in the PoC jupyter notebook in the repository.</p>
 
