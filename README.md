@@ -26,9 +26,15 @@ This project will help users engage with TED talks by providing a personalized l
 
 # References
 https://developer.ted.com/
+
 https://developers.google.com/youtube/v3
+
 https://github.com/openai/whisper
+
 https://www.pinecone.io/
+
 https://platform.openai.com/docs/
+
 https://www.selenium.dev/documentation/
+
 https://www.crummy.com/software/BeautifulSoup/
