@@ -23,10 +23,333 @@
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   codelab-ga4id=""
-                  id="proposal-codelab"
+                  id=""
                   title=""
                   environment="web"
-                  feedback-link="https://your-feedback-link">
+                  feedback-link="">
+    
+      <google-codelab-step label="Title: AI-Powered TED Talk Personalization and Research Assistant" duration="0">
+        <p><strong>Team Members: </strong></p>
+<ol type="1" start="1">
+<li>Sathvik Vadavatha - 002443505</li>
+<li>Rutuja Patil -            002827468</li>
+<li>Sakshi Aade -          002813258</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <h4 is-upgraded><strong>Background</strong></h4>
+<p>TED Talks are a great way to learn since they provide insightful thoughts from speakers on a range of subjects. Without particular searches, users may have trouble finding the correct content, and there are no tools to compare ideas from different lectures or customize insights. Additionally, the platform is devoid of interactive features like conversational browsing and methods for converting insights into practical actions. Because of these restrictions, viewers find it challenging to properly interact with and implement the information presented in TED Talks, highlighting the need for a more customized and interactive platform.</p>
+<h4 is-upgraded><strong>Objective</strong></h4>
+<p>Our project aims to develop an AI-powered platform that:</p>
+<ol type="1" start="1">
+<li>Enabling viewers to quickly locate relevant TED Talks with AI-powered interactive applications.</li>
+<li>Utilizing Retrieval-Augmented Generation (RAG) in a chatbot assistant to provide particular responses and personalized recommendations.</li>
+<li>Helps with taking notes, making mental maps, and creating research notes and playbooks</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Project Overview" duration="0">
+        <h4 is-upgraded><strong>Scope</strong></h4>
+<ul>
+<li><strong>Data Sources:</strong> TED metadata and transcripts via TED API, YouTube Transcript API, Whisper (speech-to-text).</li>
+<li><strong>Technologies:</strong> FastAPI for backend APIs, React.js for frontend, Airflow for ETL pipelines, Pinecone for vector storage, OpenAI APIs for NLP tasks.</li>
+<li><strong>Deliverables:</strong></li>
+<li>Intelligent TED Talk search and discovery.</li>
+<li>A Q&amp;A chatbot assistant using RAG (Retrieval-Augmented Generation).</li>
+<li>Tools for creating notes, mind maps, and playbooks.</li>
+</ul>
+<h4 is-upgraded><strong>Stakeholders</strong></h4>
+<ul>
+<li><strong>Learners and Researchers:</strong> Students, educators, and professionals.</li>
+<li><strong>Content Enthusiasts:</strong> TED users seeking deeper knowledge.</li>
+<li><strong>Organizations:</strong> Teams using TED Talks for training and development.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Problem Statement:" duration="0">
+        <p>In the modern world, TED lectures provide a variety of information, but viewers frequently struggle to select necessary lectures, customize the insights to suit their own requirements, and apply the knowledge to real-world situations. This undermines the platform&#39;s effect and use.</p>
+<p><strong>Current Challenges:</strong></p>
+<ul>
+<li>It can be difficult for people to find speeches that are relevant to more general or complex queries because TED&#39;s search engine relies on exact keywords.</li>
+<li>TED Talk insights are not customized to each user&#39;s learning objectives or circumstances, which limits their impact in real-world situations.</li>
+<li>There are no integrated tools available to users for turning interactive ideas into organized research outputs like mind maps, useful playbooks, or notes.</li>
+</ul>
+<p><strong>Opportunities:</strong></p>
+<ul>
+<li>Use of Retrieval-Augmented Generation (RAG) and conversational querying inspired by AI to improve finding contents and insight extraction.</li>
+<li>Allow users to adapt and customize TED Talk insights according to their own requirements and goals.</li>
+<li>By offering interactive resources for note-taking, comparison analysis, and the development of actionable research, you can transform passive use of data into active learning and application.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Methodology" duration="0">
+        <p><strong>Data Sources</strong></p>
+<ul>
+<li>TED.com </li>
+<li>TED API for metadata and transcripts</li>
+<li>Youtube API and Whisper for unavailable transcripts</li>
+</ul>
+<h4 is-upgraded><strong>Technologies and Tools</strong></h4>
+<ol type="1" start="1">
+<li><strong>Data Extraction: </strong>Selenium, Beautiful Soup</li>
+<li><strong>APIs: </strong>OpenAI API, Tavily API, TED API, Youtube API</li>
+<li><strong>Backend:</strong> FastAPI, Pinecone for embeddings, JWT Authentication, LangGraph</li>
+<li><strong>Frontend:</strong> Streamlit, CoAgents, Cytoscape.js for mind maps.</li>
+<li><strong>ETL Pipelines:</strong> Airflow for ingestion, preprocessing, and embedding generation.</li>
+<li><strong>Storage:</strong> S3 for metadata and transcripts, Pinecone for vector storage, Snowflake for video links</li>
+<li><strong>Cloud Deployment:</strong> AWS EC2</li>
+<li><strong>Containerization</strong>: Docker</li>
+<li><strong>Actions: </strong>GitActions, CI/CD </li>
+</ol>
+<h4 is-upgraded><strong>Data Pipeline Design</strong></h4>
+<ol type="1" start="1">
+<li><strong>Ingestion DAG:</strong></li>
+</ol>
+<ul>
+<li>Scrape all 6,864 metadata and transcripts for TED.com using Selenium and Beautiful Soup</li>
+<li>Collect images, details, tags and transcript text for each TED talk</li>
+<li>Generate transcripts with Whisper where unavailable</li>
+<li>Store data in S3</li>
+</ul>
+<ol type="1" start="2">
+<li><strong>Processing DAG:</strong></li>
+</ol>
+<ul>
+<li>Clean and preprocess transcripts</li>
+<li>Generate embeddings for content using OpenAI</li>
+<li>Populate vector database (Pinecone) for similarity search</li>
+<li>Additionally, populate Snowflake with video and image links for each TED talk</li>
+</ul>
+<p><strong>Data Architecture Diagram:</strong></p>
+<p class="image-container"><img style="width: 495.00px" src="img\\100e2e27844ab763.png"></p>
+<p><strong>UI Workflow:<br></strong></p>
+<p class="image-container"><img style="width: 624.00px" src="img\\d1e27a1c951f022a.png"></p>
+<p><strong>Proof of Concept:</strong></p>
+<p>Performed proof of concept of TED talks data extraction using selenium and beautiful soup. Stored the metadata as csv files for further study. This is presented in the PoC jupyter notebook in the repository.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Agentic Architecture and Essential Endpoints" duration="0">
+        <p>We employed an agentic architecture that allows our platform to be purpose driven and allow collaboration between various endpoints. Below is a detailed description of the agents:</p>
+<h4 is-upgraded><strong>Core Agents</strong></h4>
+<ol type="1" start="1">
+<li><strong>Search Endpoint</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Process user queries to find the most relevant TED Talks and return them</li>
+<li><strong>Logic:</strong> Uses embeddings stored in Pinecone to perform similarity searches based on the query</li>
+<li><strong>Example:</strong></li>
+<li>Input: &#34;Talks on leadership and emotional intelligence.&#34;</li>
+<li>Output: Ranked list of talks with links and summaries.</li>
+</ul>
+<ol type="1" start="2">
+<li><strong>Retrieval Augmented Generation Agent (RAG):</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Answer user questions by utilizing RAG</li>
+<li><strong>Logic:</strong></li>
+<li>Fetches relevant transcript snippets using RAG.</li>
+<li>Uses OpenAI API to generate relevant naturalized responses.</li>
+<li><strong>Example:</strong></li>
+<li>Input: &#34;What does Richard Dawkins say about growing up in the universe?&#34;</li>
+<li>Output: Detailed answer with references to the talk and additional insights.</li>
+</ul>
+<ol type="1" start="3">
+<li><strong>Web Search Agent:</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Perform web search for topics to gain additional context</li>
+<li><strong>Logic:</strong></li>
+<li>Uses Tavily API to perform google searches</li>
+<li>Retrieves relevant links</li>
+<li>Uses OpenAI API to summarize learnings</li>
+<li><strong>Example:</strong></li>
+<li>Input: &#34;The speaker mentioned Julius Caesar. How did he rise to power?&#34;</li>
+<li>Output: Detailed answer about Caesar&#39;s history</li>
+</ul>
+<ol type="1" start="4">
+<li><strong>Talk Comparison Agent</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Compare multiple talks transcripts based on ideas and themes</li>
+<li><strong>Logic:</strong></li>
+<li>Identifies common and opposing themes by retrieving relevant transcripts</li>
+<li>Provides detailed comparison response highlighting features of studied talks</li>
+<li><strong>Example:</strong></li>
+<li>Input: &#34;Compare Bill Gates and Jim Snabe&#39;s talks on leadership.&#34;</li>
+<li>Output: Highlighted differences and similarities.</li>
+</ul>
+<ol type="1" start="5">
+<li><strong>Note-Taking Endpoint</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Enable users to take notes while watching talks.</li>
+<li><strong>Logic:</strong></li>
+<li>Links notes to specific timestamps in the transcript.</li>
+<li>Organizes notes by themes or user-defined categories.</li>
+<li>Uses OpenAI LLM for note generation</li>
+<li><strong>Example:</strong></li>
+<li>User highlights a transcript section, and the agent converts it into a note.</li>
+</ul>
+<ol type="1" start="6">
+<li><strong>Mind Map Endpoint</strong></li>
+</ol>
+<ul>
+<li><strong>Function:</strong> Create visual representations of a talk&#39;s ideas and their interconnections.</li>
+<li><strong>Logic:</strong></li>
+<li>Parses transcripts to identify core topics and minor ideas.</li>
+<li>Generates interactive graphs using Cytoscape.js.</li>
+<li><strong>Example:</strong></li>
+<li>Input: &#34;Generate a mind map for Simon Sinek&#39;s leadership talk.&#34;</li>
+<li>Output: A graph showing nodes for key ideas like &#34;Trust&#34; and &#34;Collaboration.&#34;</li>
+</ul>
+<ol type="1" start="7">
+<li><strong>Research Note Agent</strong></li>
+</ol>
+<ul>
+<li><strong>Task:</strong> Consolidate user notes, user contexts, mind maps, and chatbot responses into a structured research note or playbook.</li>
+<li><strong>Intelligence:</strong></li>
+<li>Organizes content into sections (e.g., summary, themes,views).</li>
+<li>Export as PDF or Markdown.</li>
+<li><strong>Example Interaction:</strong></li>
+<li>User requests a playbook on &#34;Generate a report on the leadership talk but for a student.&#34;</li>
+</ul>
+<h3 is-upgraded><strong>Agentic Architecture Diagram:</strong></h3>
+<p class="image-container"><img style="width: 572.06px" src="img\\ca616bd147a2fe45.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Project Plan and Timeline" duration="0">
+        <table>
+<tr><td colspan="1" rowspan="1"><p><strong>Tasks</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Timeline</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Set up repository, environment, and scrape TED data (metadata, transcripts, tags, images). Store in S3.</p>
+</td><td colspan="1" rowspan="1"><p><strong>Nov 25 - Nov 27</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Clean data, generate embeddings, and populate Pinecone and Snowflake for storage and search.</p>
+</td><td colspan="1" rowspan="1"><p><strong>Nov 28 - Nov 30</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Develop backend APIs for search, Q&amp;A, comparisons, and note-taking using FastAPI and OpenAI.</p>
+</td><td colspan="1" rowspan="1"><p><strong>Dec 1 - Dec 5</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Build UI with Streamlit/React.js for search, notes, and mind maps. Integrate with backend APIs.</p>
+</td><td colspan="1" rowspan="1"><p><strong>Dec 6 - Dec 10</strong></p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Resources and Team:" duration="0">
+        <table>
+<tr><td colspan="1" rowspan="1"><p><strong>Tasks</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Timeline</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Assigned To</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Set up the repository, environment, and scrape TED data (metadata, transcripts, tags, images). Store in S3.</p>
+</td><td colspan="1" rowspan="1"><p>Nov 25 - Nov 27</p>
+</td><td colspan="1" rowspan="1"><p>Rutuja</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Clean data, generate embeddings, and populate Pinecone and Snowflake for storage and search.</p>
+</td><td colspan="1" rowspan="1"><p>Nov 28 - Nov 30</p>
+</td><td colspan="1" rowspan="1"><p>Sakshi</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Develop backend APIs endpoints, Q&amp;A, comparisons, and note-taking using FastAPI and OpenAI.</p>
+</td><td colspan="1" rowspan="1"><p>Dec 1 - Dec 5</p>
+</td><td colspan="1" rowspan="1"><p>Sathvik</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Build UI with Streamlit/React.js for search, notes, and mind maps. Integrate with backend APIs.</p>
+</td><td colspan="1" rowspan="1"><p>Dec 6 - Dec 10</p>
+</td><td colspan="1" rowspan="1"><p>Sakshi</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Implement tools for research notes and playbooks with export options.</p>
+</td><td colspan="1" rowspan="1"><p>Dec 11 - Dec 12</p>
+</td><td colspan="1" rowspan="1"><p>Rutuja</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Deploy on AWS EC2 with Docker, test the system, and finalize CI/CD pipeline.</p>
+</td><td colspan="1" rowspan="1"><p>Dec 13 - Dec 15</p>
+</td><td colspan="1" rowspan="1"><p>Sathvik</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Risks and Mitigation Strategies" duration="0">
+        <ol type="1" start="1">
+<li><strong>Risk:</strong> Incomplete or missing transcripts for few of the TED talks</li>
+</ol>
+<ul>
+<li>Mitigation: Utilize Whisper for speech-to-text and create transcripts</li>
+</ul>
+<ol type="1" start="2">
+<li><strong>Risk:</strong> Latency in chatbot responses</li>
+</ol>
+<ul>
+<li><strong>Mitigation:</strong> Ask for another in depth prompt</li>
+</ul>
+<ol type="1" start="3">
+<li><strong>Risk:</strong> Cluttered Mind Maps</li>
+</ol>
+<ul>
+<li><strong>Mitigation:</strong> Mind maps will consist only the core topics</li>
+</ul>
+<ol type="1" start="4">
+<li><strong>Risk:</strong> Storage Limitation</li>
+</ol>
+<ul>
+<li><strong>Mitigation:</strong> Moving to different storage space like GCP</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Expected Outcomes and Benefits" duration="0">
+        <h4 is-upgraded><strong>Measurable Goals</strong></h4>
+<ul>
+<li>Reduce search time on TED talk topics by providing users with a Q/A platform. Benchmarked against traditional website search</li>
+<li>Enable all the users to create a personalized playbook from insights gained. Generate personalized learnings and visuals that enable the user to draw insights from the talks.</li>
+<li>Providing a comparison between multiple talks from different categories. Synthesize an understanding between two different speaker&#39;s idealogies. </li>
+</ul>
+<h4 is-upgraded><strong>Benefits</strong></h4>
+<ul>
+<li>Exposure to TED talks with easier access and better search accessibility</li>
+<li>Create notes from TED talks transcripts and mind maps as derived insights</li>
+<li>Exports of personalized outputs for specific contents</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conclusion" duration="0">
+        <p>This project will help users engage with TED talks by providing a personalized learning journey in addition to the viewing experience. It will empower users to create mind maps, have interactive Q/A and personalized playbooks. Advanced AI capabilities coupled with user friendly tools the platform will help learners, educators and professionals with enhanced accessibility, interactivity and personalized knowledge content and outputs.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="References" duration="0">
+        <p><a href="https://developer.ted.com/" target="_blank">https://developer.ted.com/</a>  </p>
+<p><a href="https://developers.google.com/youtube/v3" target="_blank">https://developers.google.com/youtube/v3</a>  </p>
+<p><a href="https://github.com/openai/whisper" target="_blank">https://github.com/openai/whisper</a></p>
+<p><a href="https://www.pinecone.io/" target="_blank">https://www.pinecone.io/</a></p>
+<p><a href="https://platform.openai.com/docs/" target="_blank">https://platform.openai.com/docs/</a></p>
+<p><a href="https://www.selenium.dev/documentation/" target="_blank">https://www.selenium.dev/documentation/</a> </p>
+<p><a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank">https://www.crummy.com/software/BeautifulSoup/</a> </p>
+
+
+      </google-codelab-step>
     
   </google-codelab>
 
