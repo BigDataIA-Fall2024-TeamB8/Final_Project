@@ -1,0 +1,13 @@
+psycopg2-binary
+selenium
+requests
+boto3
+beautifulsoup4
+webdriver_manager
+pymupdf
+pinecone-client
+snowflake-connector-python
+langchain
+langchain_openai
+pandas
+chromedriver-py==114.0.5735.90

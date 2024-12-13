@@ -1,0 +1,12 @@
+services:
+  copilot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Map port 3000 to host
+    volumes:
+      - .:/app # Bind the current directory to the container for live reload
+      - /app/node_modules # Prevent overwriting of node_modules
+    environment:
+      NODE_ENV: development # Ensure dev environment
