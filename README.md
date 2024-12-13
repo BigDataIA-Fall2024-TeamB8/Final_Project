@@ -5,7 +5,7 @@
 
 ## UI link:  [http://3.95.250.248:3000/login]
 ## FastAPI link: [http://3.95.250.248:8000/docs]
-
+## Airflow link: [(http://44.220.147.205:8080)]
 
 # Background
 TED Talks are a great way to learn since they provide insightful thoughts from speakers on a range of subjects. Without particular searches, users may have trouble finding the correct content, and there are no tools to compare ideas from different lectures or customize insights. Additionally, the platform is devoid of interactive features like conversational browsing and methods for converting insights into practical actions. Because of these restrictions, viewers find it challenging to properly interact with and implement the information presented in TED Talks, highlighting the need for a more customized and interactive platform.
