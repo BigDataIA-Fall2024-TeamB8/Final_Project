@@ -1,7 +1,8 @@
 # Title: AI-Powered TED Talk Personalization and Research Assistant
 
 ## Codelabs link: [https://codelabs-preview.appspot.com/?file_id=1YhyZ6qHpSVr-cAeeDM5YerDxdNizBTQxUQJrorEgWD8#0]
-## Video link: [https://northeastern-my.sharepoint.com/:v:/g/personal/vadavatha_s_northeastern_edu/EWXPc5a3A6VLo3cICL3YTbMBWl4Wpd6-O3Lwo_8fnexyhQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=vfrsBg]
+## Proposal video link: [https://northeastern-my.sharepoint.com/:v:/g/personal/vadavatha_s_northeastern_edu/EWXPc5a3A6VLo3cICL3YTbMBWl4Wpd6-O3Lwo_8fnexyhQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=vfrsBg]
+## Demo video link: [https://drive.google.com/file/d/1JCiYtl0uHYViBY7QTqXGpLzfwRuJvEYR/view?usp=sharing]
 
 ## UI link:  [http://3.95.250.248:3000/login]
 ## FastAPI link: [http://3.95.250.248:8000/docs]
