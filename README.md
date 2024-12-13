@@ -10,7 +10,8 @@ TED Talks are a great way to learn since they provide insightful thoughts from s
 In the modern world, TED lectures provide a variety of information, but viewers frequently struggle to select necessary lectures, customize the insights to suit their own requirements, and apply the knowledge to real-world situations. This undermines the platform's effect and use.
 
 # Data Architecture Diagram:
-![image](https://github.com/user-attachments/assets/f2d27750-fb2d-49b6-9b69-83bbd5935d95)
+![image](https://github.com/user-attachments/assets/f85d5b30-31b7-44ae-b24e-6538d129b803)
+
 
 # UI Workflow:
 ![image](https://github.com/user-attachments/assets/33bd4385-9958-407d-9051-cdb3c544334a)
